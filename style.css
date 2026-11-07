@@ -1,0 +1,266 @@
+/* ---------- Colors (edit here) ---------- */
+:root {
+  --header-dark: #141414; /* main header */
+  --header-light: #2b2b2b; /* section headers */
+  --body-grey: #4a4a4a; /* page body */
+  --card-grey: #5c5c5c; /* image placeholders */
+  --panel-grey: #3d3d3d; /* text panel under card images */
+  --text: #ffffff;
+  --link: #9cc9ff; /* blue links */
+  --gap: 2.5rem;
+  --max-width: 1280px;
+  --side-pad: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--body-grey);
+  color: var(--text);
+  font-family:
+    Inter,
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 700;
+}
+a {
+  color: var(--link);
+}
+a:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* ---------- Main header ---------- */
+.site-header {
+  background: var(--header-dark);
+  text-align: center;
+  padding: 3.5rem var(--side-pad);
+}
+.site-header h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+.site-header p {
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+/* ---------- Section headers ---------- */
+.section-header {
+  background: var(--header-light);
+  padding: 1rem var(--side-pad);
+  text-align: center;
+}
+.section-header h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+}
+
+.section-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem var(--side-pad);
+}
+
+/* ---------- Modular grid ----------
+   Add another <article class="card"> inside any .grid;
+   it wraps to a new row automatically (3 per row). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2.5rem;
+}
+
+.card {
+  background: var(--panel-grey);
+  display: flex;
+  flex-direction: column;
+}
+.card .media {
+  aspect-ratio: 1 / 1;
+  background: var(--card-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card .text {
+  padding: 1.25rem 1.5rem 1.5rem;
+  font-size: 1.15rem;
+}
+.card .text p + p {
+  margin-top: 0.6rem;
+}
+
+/* Featured Work: one large element with a rectangular image */
+.grid.featured {
+  grid-template-columns: minmax(0, 800px);
+  justify-content: center;
+} /* change 800px to resize the featured card */
+.grid.featured .card .media {
+  aspect-ratio: 16 / 9;
+}
+.grid.featured .card .text {
+  font-size: 1.4rem;
+  padding: 1.75rem 2rem 2rem;
+}
+
+/* ---------- Footer (used on both pages; holds Contact Me / project links) ---------- */
+.site-footer {
+  background: var(--header-dark);
+  padding: 3rem var(--side-pad) 3.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.site-footer h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.footer-list {
+  list-style: none;
+  font-size: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 4rem;
+}
+
+/* Contact footer: 3 items on the first row, 2 centered on the second */
+.footer-list.three-two {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.footer-list.three-two li {
+  grid-column: span 2;
+}
+.footer-list.three-two li:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+.footer-list.three-two li:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+/* ---------- Description page ---------- */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.detail h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.75rem;
+}
+.detail p {
+  font-size: 1.1rem;
+  max-width: 65ch;
+}
+.detail p + p {
+  margin-top: 1rem;
+}
+
+.media-box {
+  background: var(--card-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100%;
+}
+.media-box img,
+.media-box video,
+.media-box iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+
+/* Text + media side by side (add .flip to put media on the left) */
+.split {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.split.flip {
+  grid-template-columns: 7fr 5fr;
+}
+.split.flip .media-box {
+  order: -1;
+}
+.split .media-box {
+  aspect-ratio: 16 / 10;
+}
+
+/* Full-width video */
+.wide-video {
+  aspect-ratio: 21 / 9;
+}
+
+/* Row of small media that sits beside a short text block */
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.trio .media-box {
+  aspect-ratio: 4 / 3;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .split,
+  .split.flip {
+    grid-template-columns: 1fr;
+  }
+  .split.flip .media-box {
+    order: 0;
+  }
+  .trio {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .footer-list.three-two {
+    grid-template-columns: 1fr;
+  }
+  .footer-list.three-two li,
+  .footer-list.three-two li:nth-child(4),
+  .footer-list.three-two li:nth-child(5) {
+    grid-column: auto;
+  }
+}
