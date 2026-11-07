@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+  <!-- Major Page Setup -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Game Title | Your Name</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!-- Header -->
   <body>
     <header class="site-header">
       <h1>Game Title</h1>
@@ -13,46 +15,45 @@
     </header>
 
     <main class="section-body detail">
-      <!-- Overview: text left, large media right.
-         Swap placeholder text for <img>, <video controls>, or <iframe>. -->
-      <section class="split">
-        <div>
-          <h2>About the Game</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-        <div class="media-box">Video Placeholder</div>
-      </section>
+      <!-- About Section, contains game description and related media -->
+      <div class="about-group">
+        <section class="split">
+          <div>
+            <h2>About the Game</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+          <div class="media-box">Video Placeholder</div>
+        </section>
 
-      <!-- Full-width banner media -->
+        <section class="split flip">
+          <div>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+              unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium.
+            </p>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit.
+            </p>
+          </div>
+          <div class="media-box">Image / GIF Placeholder</div>
+        </section>
+      </div>
+
+      <!-- Banner media that can be used to split up sections -->
       <div class="media-box wide-video">Wide Video / GIF Placeholder</div>
 
-      <!-- Media left, text right -->
-      <section class="split flip">
-        <div>
-          <h2>Gameplay</h2>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-            unde omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium.
-          </p>
-          <p>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-            fugit.
-          </p>
-        </div>
-        <div class="media-box">Image / GIF Placeholder</div>
-      </section>
-
-      <!-- Contributions: text with a row of small media beneath -->
+      <!-- Contributions Section -->
       <section>
         <h2>My Contributions</h2>
         <p>
@@ -66,28 +67,14 @@
         </p>
       </section>
 
-      <div class="trio">
-        <div class="media-box">Image / GIF Placeholder</div>
-        <div class="media-box">Image / GIF Placeholder</div>
-        <div class="media-box">Image / GIF Placeholder</div>
+      <!-- Media related to contributions -->
+      <div class="stack">
+        <div class="media-box">Large Image / GIF Placeholder</div>
+        <div class="media-box">Large Image / GIF Placeholder</div>
       </div>
-
-      <!-- Text left, media right -->
-      <section class="split">
-        <div>
-          <h2>Technical Details</h2>
-          <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati.
-          </p>
-          <p><strong>Engine:</strong> Placeholder Text</p>
-          <p><strong>Platform:</strong> Placeholder Text</p>
-        </div>
-        <div class="media-box">Image / GIF Placeholder</div>
-      </section>
     </main>
 
+    <!-- Footer for game link and link back to portfolio -->
     <footer class="site-footer">
       <ul class="footer-list">
         <li><a href="#">Play the Game</a></li>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <!-- Major Page Setup -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Lamb | Robbie Carneal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- Header -->
+  <body>
+    <header class="site-header">
+      <h1>Project Lamb</h1>
+      <p>Dark Fantasy Action RPG</p>
+    </header>
+
+    <main class="section-body detail">
+      <!-- About Section, contains game description and related media -->
+      <div class="about-group">
+        <section class="split">
+          <div>
+            <h2>About the Game</h2>
+            <p>
+              Project Lamb is a dark fantasy action RPG, set in a world of
+              corrupted regions that represent the seven deadly sins. The player
+              must explore and fight their way through the land, guiding the
+              people of these regions to a better life. My team, the inventory
+              system team, was one of the earliest teams on the project, in
+              which we made a spatial inventory system where placement and item
+              sizee matters.
+            </p>
+          </div>
+          <div class="media-box">
+            <img
+              src="media/project_lamb/project_lamb_inventory.gif"
+              alt="Inventory demonstration"
+            />
+          </div>
+        </section>
+
+        <section class="split flip">
+          <div>
+            <p>
+              Project Lamb's Inventory System was my Undergrad Capstone project,
+              and as such I am no longer on the team. It is still in active
+              development, and everything seen here is from prototypes during my
+              time on the project. As the project evolves and eventually comes
+              out, a more up to date look on the current scope and gameplay of
+              the project will be here.
+            </p>
+          </div>
+          <div class="media-box">
+            <img
+              src="media/project_lamb/project_lamb_equipment.gif"
+              alt="Equipment demonstration"
+            />
+          </div>
+        </section>
+      </div>
+
+      <!-- Contributions Section -->
+      <section>
+        <h2>My Contributions</h2>
+        <p>
+          The first thing I contributed to the project was a lot of
+          documentation and design, such as the package diagram seen below.
+          Being a capstone project in an IT program, it was unfortunately not
+          very iterative and the whole team did a number of technical diagrams
+          and designs.
+        </p>
+        <p>
+          The second thing I did was, as the database lead, create the backend
+          for how items are stored in the inventory. As the inventory uses a
+          grid-based system where size and orientation matter, storing items is
+          more complicated here, requiring an array of sorts to be used that not
+          only memorizes the objects stored in it, but also the state of the
+          grid.
+        </p>
+        <p>
+          The third thing I did was pretty much singlehandely create the
+          equipment system. Given that it has to interact with the inventory's
+          grid, it uses a version of said grid system that transforms it into
+          single cells for the equipment, no matter their size. These cells
+          store to the player what the player has equipped in each slot, and
+          includes other features like limiting slots based on type, two-handed
+          weapons preventing you from equipping multiple things, stance changing
+          between melee, range, & magic, and more.
+        </p>
+        <p>
+          The last thing I did was some polish, mainly through integrating
+          everyone's work into pages the player can scroll through. This
+          includes the item inventory, crafting menu, and equipment menu, much
+          of which I have not shown, given that it was not my contribution.
+        </p>
+      </section>
+
+      <!-- Media related to contributions -->
+      <div class="stack">
+        <div class="media-box-2">
+          <img
+            src="media/project_lamb/project_lamb_package_diagram.jpg"
+            alt="Package Diagram"
+          />
+        </div>
+        <div class="media-box-3">
+          <img
+            src="media/project_lamb/initialize_equipment.png"
+            alt="Package Diagram"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer for game link and link back to portfolio -->
+    <footer class="site-footer">
+      <ul class="footer-list">
+        <li><a href="index.html">Back to Portfolio</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

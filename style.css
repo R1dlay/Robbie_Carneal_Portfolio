@@ -1,4 +1,4 @@
-/* ---------- Colors (edit here) ---------- */
+/* Overall Fomatting */
 :root {
   --header-dark: #141414; /* main header */
   --header-light: #2b2b2b; /* section headers */
@@ -43,7 +43,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* ---------- Main header ---------- */
+/* Header Fomatting */
 .site-header {
   background: var(--header-dark);
   text-align: center;
@@ -60,7 +60,7 @@ a:focus-visible {
   font-weight: 400;
 }
 
-/* ---------- Section headers ---------- */
+/* Section Header Formatting */
 .section-header {
   background: var(--header-light);
   padding: 1rem var(--side-pad);
@@ -77,9 +77,7 @@ a:focus-visible {
   padding: 3rem var(--side-pad);
 }
 
-/* ---------- Modular grid ----------
-   Add another <article class="card"> inside any .grid;
-   it wraps to a new row automatically (3 per row). */
+/* Grid Formatting */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -105,6 +103,10 @@ a:focus-visible {
   object-fit: cover;
   display: block;
 }
+
+.card .media img.fit-contain {
+  object-fit: contain;
+}
 .card .text {
   padding: 1.25rem 1.5rem 1.5rem;
   font-size: 1.15rem;
@@ -113,11 +115,11 @@ a:focus-visible {
   margin-top: 0.6rem;
 }
 
-/* Featured Work: one large element with a rectangular image */
+/* Featured Work Formatting */
 .grid.featured {
   grid-template-columns: minmax(0, 800px);
   justify-content: center;
-} /* change 800px to resize the featured card */
+}
 .grid.featured .card .media {
   aspect-ratio: 16 / 9;
 }
@@ -126,7 +128,7 @@ a:focus-visible {
   padding: 1.75rem 2rem 2rem;
 }
 
-/* ---------- Footer (used on both pages; holds Contact Me / project links) ---------- */
+/* Footer Formatting*/
 .site-footer {
   background: var(--header-dark);
   padding: 3rem var(--side-pad) 3.5rem;
@@ -147,7 +149,7 @@ a:focus-visible {
   gap: 1.5rem 4rem;
 }
 
-/* Contact footer: 3 items on the first row, 2 centered on the second */
+/* Contact Me Section Formatting */
 .footer-list.three-two {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -157,6 +159,8 @@ a:focus-visible {
 }
 .footer-list.three-two li {
   grid-column: span 2;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .footer-list.three-two li:nth-child(4) {
   grid-column: 2 / span 2;
@@ -165,7 +169,7 @@ a:focus-visible {
   grid-column: 4 / span 2;
 }
 
-/* ---------- Description page ---------- */
+/* Description Formatting */
 .detail {
   display: flex;
   flex-direction: column;
@@ -176,14 +180,17 @@ a:focus-visible {
   margin-bottom: 0.75rem;
 }
 .detail p {
-  font-size: 1.1rem;
-  max-width: 65ch;
+  font-size: 1.3rem;
+  max-width: 100ch;
+  text-wrap: pretty;
 }
 .detail p + p {
   margin-top: 1rem;
 }
 
-.media-box {
+.media-box,
+.media-box-2,
+.media-box-3 {
   background: var(--card-grey);
   display: flex;
   align-items: center;
@@ -191,9 +198,16 @@ a:focus-visible {
   text-align: center;
   min-height: 100%;
 }
+
 .media-box img,
 .media-box video,
-.media-box iframe {
+.media-box iframe,
+.media-box-2 img,
+.media-box-2 video,
+.media-box-2 iframe,
+.media-box-3 img,
+.media-box-3 video,
+.media-box-3 iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -201,12 +215,30 @@ a:focus-visible {
   display: block;
 }
 
-/* Text + media side by side (add .flip to put media on the left) */
+.media-box-2 {
+  aspect-ratio: 1299 / 938;
+}
+
+.media-box-3 {
+  aspect-ratio: 1285 / 289;
+}
+
+/* Media Formatting for aligning to different sides on project description pages */
 .split {
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
+}
+.split h2 {
+  line-height: 1.1;
+}
+
+/* Text formatting for aligning to different sides on project description pages */
+.about-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .split.flip {
   grid-template-columns: 7fr 5fr;
@@ -215,25 +247,24 @@ a:focus-visible {
   order: -1;
 }
 .split .media-box {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
 }
 
-/* Full-width video */
+/* Media Formatting */
 .wide-video {
   aspect-ratio: 21 / 9;
 }
 
-/* Row of small media that sits beside a short text block */
-.trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.stack {
+  display: flex;
+  flex-direction: column;
   gap: var(--gap);
 }
-.trio .media-box {
-  aspect-ratio: 4 / 3;
+.stack .media-box {
+  aspect-ratio: 16 / 9;
 }
 
-/* ---------- Mobile ---------- */
+/* Mobile Formatting */
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -244,9 +275,6 @@ a:focus-visible {
   }
   .split.flip .media-box {
     order: 0;
-  }
-  .trio {
-    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 520px) {
